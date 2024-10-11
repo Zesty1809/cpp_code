@@ -21,7 +21,7 @@ void displayList(Node* n) {
     std::cout << "nullptr" << std::endl;
 }
 
-void insertAtFront(Node**head, int newValue) {
+void insertionAtBeginning(Node**head, int newValue) {
     // Prepare a newNode.
     Node* newNode = new Node();
     newNode->Value = newValue;
@@ -33,7 +33,7 @@ void insertAtFront(Node**head, int newValue) {
     *head = newNode;
 }
 
-void insertAtEnd(Node**head, int newValue) {
+void insertionAtEnd(Node**head, int newValue) {
     // Prepare a new node
     Node* newNode = new Node();
     newNode->Value = newValue;
@@ -70,7 +70,8 @@ int main()
     third->Value = 3;
     third->Next = nullptr;
 
-    insertAtEnd(&head, 4);
+    insertionAtBeginning(&head, 0);
+    insertionAtEnd(&head, 4);
 
     displayList(head);
 }
