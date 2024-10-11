@@ -1,4 +1,4 @@
-# dsa/linkedlist/Makefile
+# dsa/arrays/Makefile
 
 # Include the common Makefile
 include ../../Makefile.common
@@ -7,4 +7,4 @@ include ../../Makefile.common
 run:
 	@clear
 	@echo -e "Running the program\n"
-	@sudo ./$(OBJDIR)/list.o
+	@sudo ./$(OBJDIR)/*.o
