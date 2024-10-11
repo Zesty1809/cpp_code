@@ -23,8 +23,9 @@ $(OBJDIR):
 	mkdir -p $(OBJDIR)
 
 run:
+	@clear
 	@echo -e "Running the program\n"
-	@sudo ./$(OBJDIR)/main.o
+	@sudo ./$(OBJDIR)/list.o
 
 # Clean rule to remove generated files
 clean:

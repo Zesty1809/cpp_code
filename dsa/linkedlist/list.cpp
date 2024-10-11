@@ -1,3 +1,8 @@
+// WAP in C/C++ to implement the algorithms 
+// (a) Insertion at beginning 
+// (b) Insertion at end
+// in a singly linked list.
+
 #include <iostream>
 
 class Node{
@@ -9,7 +14,7 @@ public:
 void displayList(Node* n) {
     while (n != nullptr)
     {
-        std::cout << n->Value << "->";
+        std::cout << n->Value << " -> ";
         n = n->Next;
     }
 
@@ -28,6 +33,28 @@ void insertAtFront(Node**head, int newValue) {
     *head = newNode;
 }
 
+void insertAtEnd(Node**head, int newValue) {
+    // Prepare a new node
+    Node* newNode = new Node();
+    newNode->Value = newValue;
+    newNode->Next = nullptr;
+
+    // If list is empty, newNode will be the head node 
+    if (*head == nullptr) {
+        *head = newNode;
+        return;
+    }
+
+    // Else find the last node 
+    Node* last = *head;
+    while (last->Next != nullptr) {
+        last = last->Next;
+    }
+
+    // Insert newNode after Last node (at the end)
+    last->Next = newNode;
+}
+
 int main()
 {
     Node* head = new Node();
@@ -43,6 +70,7 @@ int main()
     third->Value = 3;
     third->Next = nullptr;
 
-    insertAtFront(&head, -1);
+    insertAtEnd(&head, 4);
+
     displayList(head);
 }
